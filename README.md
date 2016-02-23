@@ -1,5 +1,4 @@
 # SmartPopup
-<<<<<<< HEAD
 
 [![CI Status](http://img.shields.io/travis/Ricardo Koch/SmartPopup.svg?style=flat)](https://travis-ci.org/Ricardo Koch/SmartPopup)
 [![Version](https://img.shields.io/cocoapods/v/SmartPopup.svg?style=flat)](http://cocoapods.org/pods/SmartPopup)
@@ -28,6 +27,7 @@ Ricardo Koch, ricardo@ricardokoch.com
 ## License
 
 SmartPopup is available under the MIT license. See the LICENSE file for more info.
-=======
+
+## Description
+
 Cocoapods component for easy creating and management of UI dialogs for iOS
->>>>>>> 90bc72f9dc85946d1b83f0bfff43dc1792b6cd56
