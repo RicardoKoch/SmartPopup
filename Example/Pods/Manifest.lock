@@ -1,0 +1,14 @@
+PODS:
+  - SmartPopup (0.1.0)
+
+DEPENDENCIES:
+  - SmartPopup (from `../`)
+
+EXTERNAL SOURCES:
+  SmartPopup:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SmartPopup: d9300021a385ada8653fa886529f9ee2c9d8e123
+
+COCOAPODS: 0.39.0

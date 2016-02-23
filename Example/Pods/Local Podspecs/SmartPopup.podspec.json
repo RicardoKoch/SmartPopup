@@ -1,0 +1,25 @@
+{
+  "name": "SmartPopup",
+  "version": "0.1.0",
+  "summary": "A short description of SmartPopup.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/SmartPopup",
+  "license": "MIT",
+  "authors": {
+    "Ricardo Koch": "ricardo@ricardokoch.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/SmartPopup.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "SmartPopup": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

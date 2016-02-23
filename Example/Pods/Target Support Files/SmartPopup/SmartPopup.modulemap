@@ -1,0 +1,6 @@
+framework module SmartPopup {
+  umbrella header "SmartPopup-umbrella.h"
+
+  export *
+  module * { export * }
+}
