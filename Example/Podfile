@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'SmartPopup_Example', :exclusive => true do
+  pod 'SmartPopup', :path => '../'
+end
+
+target 'SmartPopup_Tests', :exclusive => true do
+  pod 'SmartPopup', :path => '../'
+
+  
+end
