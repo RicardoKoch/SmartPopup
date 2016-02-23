@@ -16,6 +16,7 @@
 		855E5ECBA1BDD3ADD34F8831 /* Pods_SmartPopup_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B9EB80FCA30F5750183259 /* Pods_SmartPopup_Example.framework */; };
 		8E12A0031C7CC21300E4C8A4 /* GiftWonDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E12A0011C7CC21300E4C8A4 /* GiftWonDialog.swift */; };
 		8E12A0041C7CC21300E4C8A4 /* GiftWonDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E12A0021C7CC21300E4C8A4 /* GiftWonDialog.xib */; };
+		8E48E6C51C7CDE6F0072E519 /* teste.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E6C41C7CDE6F0072E519 /* teste.m */; };
 		915C235A2AEDAEABBFAABC76 /* Pods_SmartPopup_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E8A22AF348B9452F094309 /* Pods_SmartPopup_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,9 @@
 		83B72BBC38AA916FB083F923 /* Pods-SmartPopup_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPopup_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPopup_Tests/Pods-SmartPopup_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8E12A0011C7CC21300E4C8A4 /* GiftWonDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftWonDialog.swift; sourceTree = "<group>"; };
 		8E12A0021C7CC21300E4C8A4 /* GiftWonDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftWonDialog.xib; sourceTree = "<group>"; };
+		8E48E6C21C7CDE6E0072E519 /* SmartPopup_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartPopup_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		8E48E6C31C7CDE6F0072E519 /* teste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teste.h; sourceTree = "<group>"; };
+		8E48E6C41C7CDE6F0072E519 /* teste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teste.m; sourceTree = "<group>"; };
 		999725717C4F2006298E16A9 /* Pods-SmartPopup_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPopup_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPopup_Tests/Pods-SmartPopup_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A2B9EB80FCA30F5750183259 /* Pods_SmartPopup_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartPopup_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E8A22AF348B9452F094309 /* Pods_SmartPopup_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartPopup_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				607FACD41AFB9204008FA782 /* Info.plist */,
+				8E48E6C31C7CDE6F0072E519 /* teste.h */,
+				8E48E6C41C7CDE6F0072E519 /* teste.m */,
+				8E48E6C21C7CDE6E0072E519 /* SmartPopup_Example-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -223,12 +230,13 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = L76S8C9RJJ;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -377,6 +385,7 @@
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				8E12A0031C7CC21300E4C8A4 /* GiftWonDialog.swift in Sources */,
+				8E48E6C51C7CDE6F0072E519 /* teste.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,9 +444,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -480,9 +491,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -505,11 +518,19 @@
 			baseConfigurationReference = 3ABD1756EBCA0BE0865F823C /* Pods-SmartPopup_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SmartPopup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartPopup/SmartPopup_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -518,11 +539,18 @@
 			baseConfigurationReference = 6ACE7E5A1CA356A6C8916C88 /* Pods-SmartPopup_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SmartPopup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartPopup/SmartPopup_Example-Bridging-Header.h";
 			};
 			name = Release;
 		};

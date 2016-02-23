@@ -11,9 +11,12 @@
 		3B4399C00BA9176A955C72D5CEF562D5 /* SmartPopup.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5BC0A718926F2537488824AA5751CB7 /* SmartPopup.bundle */; };
 		4E18288DA8D6FC0AFAE10B7D54FB9011 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		8B88C012C54C94C1004587DF1C2DB730 /* Pods-SmartPopup_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E93C1EAD6E9B4B83110F0F89FDD40D3 /* Pods-SmartPopup_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8E129FFD1C7C242700E4C8A4 /* SmartPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E129FF71C7C242700E4C8A4 /* SmartPopup.m */; };
-		8E129FFE1C7C242700E4C8A4 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E129FFA1C7C242700E4C8A4 /* UIImage+ImageEffects.m */; };
-		8E129FFF1C7C242700E4C8A4 /* UIRotatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E129FFC1C7C242700E4C8A4 /* UIRotatingView.m */; };
+		8E48E6C81C7CDEEB0072E519 /* SmartPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E129FF81C7C242700E4C8A4 /* SmartPopup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E48E6C91C7CDEEE0072E519 /* SmartPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E129FF71C7C242700E4C8A4 /* SmartPopup.m */; };
+		8E48E6CA1C7CDEF20072E519 /* UIImage+ImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E129FF91C7C242700E4C8A4 /* UIImage+ImageEffects.h */; };
+		8E48E6CB1C7CDEF20072E519 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E129FFA1C7C242700E4C8A4 /* UIImage+ImageEffects.m */; };
+		8E48E6CC1C7CDEF20072E519 /* UIRotatingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E129FFB1C7C242700E4C8A4 /* UIRotatingView.h */; };
+		8E48E6CD1C7CDEF20072E519 /* UIRotatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E129FFC1C7C242700E4C8A4 /* UIRotatingView.m */; };
 		91D14C63267BD2F4864F9C5E923154CE /* Pods-SmartPopup_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C9381976C34BB177B663B7EBB3C91C00 /* Pods-SmartPopup_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		972838659657CB7A38A774D9DEA9C66F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		A7D077581D469A1D7FE60465AD4348E6 /* Pods-SmartPopup_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B58411CD99CFEB248F22AD9A16628E /* Pods-SmartPopup_Example-dummy.m */; };
@@ -282,6 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9F19F9BFC1BED063EA2EF4CFA1F1165 /* SmartPopup-umbrella.h in Headers */,
+				8E48E6CA1C7CDEF20072E519 /* UIImage+ImageEffects.h in Headers */,
+				8E48E6C81C7CDEEB0072E519 /* SmartPopup.h in Headers */,
+				8E48E6CC1C7CDEF20072E519 /* UIRotatingView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +374,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0720;
+				TargetAttributes = {
+					460447E5FFC5FA3E39B79DACAB8CF8E7 = {
+						DevelopmentTeam = L76S8C9RJJ;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -412,7 +423,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E48E6CD1C7CDEF20072E519 /* UIRotatingView.m in Sources */,
+				8E48E6C91C7CDEEE0072E519 /* SmartPopup.m in Sources */,
 				E8164A2BB05DB1312D5D36E6D611F040 /* SmartPopup-dummy.m in Sources */,
+				8E48E6CB1C7CDEF20072E519 /* UIImage+ImageEffects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,9 +434,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E129FFF1C7C242700E4C8A4 /* UIRotatingView.m in Sources */,
-				8E129FFE1C7C242700E4C8A4 /* UIImage+ImageEffects.m in Sources */,
-				8E129FFD1C7C242700E4C8A4 /* SmartPopup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,12 +481,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 856B8D5840A3CE1196055BE8E47E9DE2 /* SmartPopup.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/SmartPopup/SmartPopup-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SmartPopup/Info.plist";
@@ -487,6 +500,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = SmartPopup;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -542,6 +556,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-SmartPopup_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -568,12 +583,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 856B8D5840A3CE1196055BE8E47E9DE2 /* SmartPopup.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/SmartPopup/SmartPopup-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SmartPopup/Info.plist";
@@ -585,6 +602,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = SmartPopup;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -603,6 +621,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-SmartPopup_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -635,6 +654,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-SmartPopup_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -660,6 +680,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 856B8D5840A3CE1196055BE8E47E9DE2 /* SmartPopup.xcconfig */;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = SmartPopup;
 				SDKROOT = iphoneos;
@@ -672,6 +693,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 856B8D5840A3CE1196055BE8E47E9DE2 /* SmartPopup.xcconfig */;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = SmartPopup;
 				SDKROOT = iphoneos;
@@ -732,6 +754,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-SmartPopup_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

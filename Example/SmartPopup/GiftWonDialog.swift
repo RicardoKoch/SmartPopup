@@ -22,21 +22,17 @@ class GiftWonDialog: UIView, SmartPopupViewProtocol {
     //category, slot name
     @IBOutlet weak var detailLabel: UILabel!
     
-    @IBOutlet weak var discountLabel: UILabel!
-    
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var equipButton: UIButton!
     
     var popupId: String = ""
-    weak var avatarItem: AvatarItem?
-    weak var dealItem: Deal?
+    var title: String?
+    var pTitle: String?
+    var pSubtitle: String?
+    var pDetails: String?
     
     /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
+    MANDATORY PROTOCOL METHODS
     */
     
     class func createFromXib() -> SmartPopupViewProtocol! {
@@ -53,12 +49,21 @@ class GiftWonDialog: UIView, SmartPopupViewProtocol {
     
     func setArgs(args: [AnyObject]!) {
         
-        if args.count > 0 {
-            if let ai = args[0] as? AvatarItem {
-                self.avatarItem = ai
+        if args != nil && args.count > 0 {
+            if let arg = args[0] as? String {
+                //set variables...
+                self.title = arg
             }
-            else if let d = args[0] as? Deal {
-                self.dealItem = d
+            if let arg = args[1] as? String {
+                self.pTitle = arg
+            }
+            if let arg = args[2] as? String {
+                //set variables...
+                self.pSubtitle = arg
+            }
+            if let arg = args[3] as? String {
+                //set variables...
+                self.pDetails = arg
             }
         }
     }
@@ -71,37 +76,21 @@ class GiftWonDialog: UIView, SmartPopupViewProtocol {
     func config() {
         //configure ui elements
         
-        self.dialogTitleLabel.text = LS(" You Won")
-        
-        self.closeButton.setTitle(LS("Close"), forState: .Normal)
-        
-        if avatarItem != nil {
-            self.titleLabel.text = avatarItem?.getItemName()
-            self.subtitleLabel.text = avatarItem?.getItemSetName()
-            self.detailLabel.text = avatarItem?.getSlotName()
-            self.discountLabel.hidden = true
-            self.equipButton.setTitle(LS("Equip"), forState: .Normal)
-            
-            //equip item tutorial after 1 sec
-            let time:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(UInt64(1.0) * NSEC_PER_SEC))
-            dispatch_after(time, dispatch_get_main_queue(), {
-
-                TutorialManager.sharedInstance.showTutorial(10, inView: self.equipButton, controllerView: self)
-            })
-            
-            let iv = iconImageView as! PFImageView
-            iv.file = avatarItem?.getImage()
-            iv.loadInBackground()
-            iv.layer.cornerRadius = 40
-            iv.clipsToBounds = true
-        }
-        else if dealItem != nil {
-            
-            self.baseImageView.hidden = true
-            self.equipButton.setTitle(LS("See Deal"), forState: .Normal)
+        if self.title != nil {
+            self.dialogTitleLabel.text = self.title
         }
         
-        self.closeButton.setTitle(LS("OK"), forState: .Normal)
+        if self.pTitle != nil {
+            self.titleLabel.text = self.pTitle
+        }
+        
+        if self.pSubtitle != nil {
+            self.subtitleLabel.text = self.pSubtitle
+        }
+        
+        if self.pDetails != nil {
+            self.detailLabel.text = self.pDetails
+        }
         
         var buttonImage = UIImage(named:"BlueButton");
         buttonImage = buttonImage?.stretchableImageWithLeftCapWidth(10, topCapHeight: 0)
@@ -123,6 +112,10 @@ class GiftWonDialog: UIView, SmartPopupViewProtocol {
         
     }
     
+    /*
+     END OF MANDATORY PROTOCOL METHODS
+     */
+    
     @IBAction func closeClicked(sender: AnyObject) {
         
         SmartPopup.instance().dismiss(self.popupId)
@@ -131,8 +124,6 @@ class GiftWonDialog: UIView, SmartPopupViewProtocol {
     @IBAction func goToClicked(sender: AnyObject) {
         
         SmartPopup.instance().dismiss(self.popupId)
-        NSNotificationCenter.defaultCenter()
-            .postNotificationName("ShouldEditAvatar", object:self.avatarItem)
     }
     
     

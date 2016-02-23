@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10109" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment version="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GiftWonDialog" customModule="DealHunter" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="260"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GiftWonDialog" customModule="SmartPopup_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="220"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Você Ganhou" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wza-Q1-60L">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  You Won" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wza-Q1-60L">
                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                     <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -28,24 +27,24 @@
                         <constraint firstAttribute="width" constant="100" id="roG-ig-b8p"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PxA-8A-9mz" userLabel="ItemImage" customClass="PFImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PxA-8A-9mz" userLabel="ItemImage">
                     <rect key="frame" x="10" y="51" width="100" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="DKx-eh-4YE"/>
                         <constraint firstAttribute="width" constant="100" id="J3n-5T-29X"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iphone mais barato que na india, compre ate final de semana" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.89999999999999991" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="174" translatesAutoresizingMaskIntoConstraints="NO" id="Sdj-eL-JHH">
-                    <rect key="frame" x="118" y="51" width="174" height="41"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10% Discount in all game consoles this week only! Enjoy!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="174" translatesAutoresizingMaskIntoConstraints="NO" id="Sdj-eL-JHH">
+                    <rect key="frame" x="118" y="51" width="174" height="48"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="41" id="vWc-6v-yTW"/>
+                        <constraint firstAttribute="height" constant="48" id="vWc-6v-yTW"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submarino" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000036" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5aN-4d-0C4">
-                    <rect key="frame" x="118" y="100" width="174" height="19"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000036" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5aN-4d-0C4">
+                    <rect key="frame" x="118" y="107" width="174" height="19"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="19" id="qpT-7q-e8x"/>
                     </constraints>
@@ -53,8 +52,8 @@
                     <color key="textColor" red="1" green="0.61176470589999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eletrônicos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000036" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Upx-Kq-ycQ">
-                    <rect key="frame" x="118" y="127" width="174" height="19"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eletronics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000036" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Upx-Kq-ycQ">
+                    <rect key="frame" x="118" y="131" width="174" height="19"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="19" id="Lsv-2c-PiD"/>
                     </constraints>
@@ -63,12 +62,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fe-rb-iTh">
-                    <rect key="frame" x="8" y="212" width="160" height="40"/>
+                    <rect key="frame" x="8" y="172" width="160" height="40"/>
                     <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="qb3-to-Mmh"/>
                     </constraints>
-                    <state key="normal" title="Fechar">
+                    <state key="normal" title="Close">
                         <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -77,13 +76,13 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhN-a2-ivU">
-                    <rect key="frame" x="176" y="212" width="116" height="40"/>
+                    <rect key="frame" x="176" y="172" width="116" height="40"/>
                     <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="116" id="LOL-GF-4aO"/>
                         <constraint firstAttribute="height" constant="40" id="MCE-Q0-qb2"/>
                     </constraints>
-                    <state key="normal" title="Equipar">
+                    <state key="normal" title="Equip">
                         <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -91,39 +90,26 @@
                         <action selector="goToClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="i3L-Jz-oWP"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somente R$299,99!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UD-SE-dIX">
-                    <rect key="frame" x="0.0" y="159" width="300" height="42"/>
-                    <color key="backgroundColor" red="0.8709904101" green="0.051965370769999998" blue="0.069393070030000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="42" id="CdV-u5-xgx"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                    <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Ets-KL-Fbc" firstAttribute="top" secondItem="Wza-Q1-60L" secondAttribute="bottom" constant="8" id="3VU-An-aQg"/>
                 <constraint firstAttribute="bottom" secondItem="dhN-a2-ivU" secondAttribute="bottom" constant="8" id="3gg-3h-VRa"/>
                 <constraint firstItem="Wza-Q1-60L" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3mr-PN-njn"/>
-                <constraint firstAttribute="trailing" secondItem="7UD-SE-dIX" secondAttribute="trailing" id="A6e-rP-BVC"/>
                 <constraint firstItem="PxA-8A-9mz" firstAttribute="top" secondItem="Wza-Q1-60L" secondAttribute="bottom" constant="8" id="BNa-B3-rtF"/>
                 <constraint firstItem="7fe-rb-iTh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="CRo-35-YQl"/>
                 <constraint firstAttribute="trailing" secondItem="Sdj-eL-JHH" secondAttribute="trailing" constant="8" id="Cr6-K1-BOF"/>
                 <constraint firstItem="Upx-Kq-ycQ" firstAttribute="leading" secondItem="PxA-8A-9mz" secondAttribute="trailing" constant="8" id="EDR-1w-eKm"/>
-                <constraint firstItem="Upx-Kq-ycQ" firstAttribute="top" secondItem="5aN-4d-0C4" secondAttribute="bottom" constant="8" id="EOw-LW-J10"/>
+                <constraint firstItem="Upx-Kq-ycQ" firstAttribute="top" secondItem="5aN-4d-0C4" secondAttribute="bottom" constant="5" id="EOw-LW-J10"/>
                 <constraint firstAttribute="trailing" secondItem="Wza-Q1-60L" secondAttribute="trailing" id="HYv-TG-HDu"/>
                 <constraint firstItem="5aN-4d-0C4" firstAttribute="top" secondItem="Sdj-eL-JHH" secondAttribute="bottom" constant="8" id="Jz1-va-xUD"/>
                 <constraint firstItem="Wza-Q1-60L" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Lug-4c-bnO"/>
                 <constraint firstItem="Ets-KL-Fbc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="TXH-cj-V1a"/>
                 <constraint firstAttribute="trailing" secondItem="dhN-a2-ivU" secondAttribute="trailing" constant="8" id="WFf-I1-mdz"/>
                 <constraint firstItem="5aN-4d-0C4" firstAttribute="leading" secondItem="PxA-8A-9mz" secondAttribute="trailing" constant="8" id="Zj2-Ig-f6G"/>
-                <constraint firstItem="7UD-SE-dIX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="deL-aK-hyx"/>
                 <constraint firstAttribute="trailing" secondItem="5aN-4d-0C4" secondAttribute="trailing" constant="8" id="iUb-vv-0jQ"/>
                 <constraint firstItem="Sdj-eL-JHH" firstAttribute="top" secondItem="Wza-Q1-60L" secondAttribute="bottom" constant="8" id="j65-qT-xsC"/>
                 <constraint firstAttribute="bottom" secondItem="7fe-rb-iTh" secondAttribute="bottom" constant="8" id="jBx-g8-d0H"/>
-                <constraint firstItem="7UD-SE-dIX" firstAttribute="top" secondItem="PxA-8A-9mz" secondAttribute="bottom" constant="8" id="kgZ-wM-Glv"/>
                 <constraint firstItem="PxA-8A-9mz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="mIa-sG-nc3"/>
                 <constraint firstItem="Sdj-eL-JHH" firstAttribute="leading" secondItem="PxA-8A-9mz" secondAttribute="trailing" constant="8" id="rvs-Yl-sI2"/>
                 <constraint firstItem="dhN-a2-ivU" firstAttribute="leading" secondItem="7fe-rb-iTh" secondAttribute="trailing" constant="8" id="stD-mv-0pG"/>
@@ -137,7 +123,6 @@
                 <outlet property="closeButton" destination="7fe-rb-iTh" id="vvi-8L-Wu9"/>
                 <outlet property="detailLabel" destination="Upx-Kq-ycQ" id="iT4-QD-Ui3"/>
                 <outlet property="dialogTitleLabel" destination="Wza-Q1-60L" id="ETS-Dv-omz"/>
-                <outlet property="discountLabel" destination="7UD-SE-dIX" id="S4P-uB-b57"/>
                 <outlet property="equipButton" destination="dhN-a2-ivU" id="YxF-1b-0zT"/>
                 <outlet property="iconImageView" destination="PxA-8A-9mz" id="fNI-0v-Vu8"/>
                 <outlet property="subtitleLabel" destination="5aN-4d-0C4" id="ZcH-Xk-NEn"/>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10109" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SmartPopup_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,190 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="W66-l5-cTR">
+                                <rect key="frame" x="20" y="40" width="560" height="540"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAU-yy-weO">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="54"/>
+                                        <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="U1A-s3-pPq"/>
+                                        </constraints>
+                                        <state key="normal" title="Simple Dialog">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="U1A-s3-pPq"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="simpleDialogAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WBu-Ue-3CV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQW-AA-17E">
+                                        <rect key="frame" x="0.0" y="69" width="560" height="55"/>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.58823529409999997" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="NKd-jh-hXb"/>
+                                        </constraints>
+                                        <state key="normal" title="Chained Dialog">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="NKd-jh-hXb"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="chainedDialogAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="exP-FK-mru"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3T-Ax-AMX">
+                                        <rect key="frame" x="0.0" y="139" width="560" height="54"/>
+                                        <color key="backgroundColor" red="1" green="0.1960784314" blue="0.1960784314" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="rZk-b2-zt9"/>
+                                        </constraints>
+                                        <state key="normal" title="Loading Dialog">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="rZk-b2-zt9"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="loadingDialogAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zZu-9Q-yOf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7i-8y-Yif">
+                                        <rect key="frame" x="0.0" y="208" width="560" height="55"/>
+                                        <color key="backgroundColor" red="0.23137254900000001" green="0.37647058820000001" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="vuK-rp-bRm"/>
+                                        </constraints>
+                                        <state key="normal" title="Buttons Dialog">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="vuK-rp-bRm"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="buttonsDialogAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9in-br-w5Z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63j-oy-pg1">
+                                        <rect key="frame" x="0.0" y="278" width="560" height="54"/>
+                                        <color key="backgroundColor" red="0.75540413533834583" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="waF-Px-L3R"/>
+                                        </constraints>
+                                        <state key="normal" title="Dialog with Image">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="waF-Px-L3R"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="dialogWithImageAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7Rw-zc-GMN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5l-Ty-zB0">
+                                        <rect key="frame" x="0.0" y="347" width="560" height="54"/>
+                                        <color key="backgroundColor" red="0.45048167293233082" green="0.68341752819548873" blue="0.18861607142857142" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="anp-4h-43E"/>
+                                        </constraints>
+                                        <state key="normal" title="Dialog with Image View">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="anp-4h-43E"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="dialogImageViewAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0Yi-iU-udT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gh9-KD-G1a">
+                                        <rect key="frame" x="0.0" y="416" width="560" height="55"/>
+                                        <color key="backgroundColor" red="0.75540413529999995" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="mKx-P6-9Cf"/>
+                                        </constraints>
+                                        <state key="normal" title="Custom View Dialog">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="mKx-P6-9Cf"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="customViewAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LLC-On-L8m"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsb-jy-Kav">
+                                        <rect key="frame" x="0.0" y="486" width="560" height="54"/>
+                                        <color key="backgroundColor" red="0.74559445488721809" green="0.1833587875939848" blue="0.62450070488721809" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ox3-hm-RJQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Custom View Dialog 2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ox3-hm-RJQ"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="customDialog2Action:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lux-Jj-DSn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="r7i-8y-Yif" firstAttribute="leading" secondItem="W66-l5-cTR" secondAttribute="leading" id="18l-HE-5wN"/>
+                                    <constraint firstAttribute="trailing" secondItem="l3T-Ax-AMX" secondAttribute="trailing" id="4HE-Gv-0wl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hsb-jy-Kav" secondAttribute="trailing" id="4fX-3c-K5E"/>
+                                    <constraint firstItem="l3T-Ax-AMX" firstAttribute="leading" secondItem="W66-l5-cTR" secondAttribute="leading" id="7nH-r8-0DX"/>
+                                    <constraint firstAttribute="trailing" secondItem="63j-oy-pg1" secondAttribute="trailing" id="98n-5z-0dV"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gh9-KD-G1a" secondAttribute="trailing" id="Bfh-bW-JLQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="r7i-8y-Yif" secondAttribute="trailing" id="LYZ-WQ-exg"/>
+                                    <constraint firstItem="Hsb-jy-Kav" firstAttribute="leading" secondItem="W66-l5-cTR" secondAttribute="leading" id="Ur4-pZ-vPe"/>
+                                    <constraint firstAttribute="trailing" secondItem="LQW-AA-17E" secondAttribute="trailing" id="WlA-Ge-nK3"/>
+                                    <constraint firstItem="63j-oy-pg1" firstAttribute="leading" secondItem="W66-l5-cTR" secondAttribute="leading" id="bzx-cZ-lwA"/>
+                                    <constraint firstAttribute="trailing" secondItem="v5l-Ty-zB0" secondAttribute="trailing" id="deO-tG-ujH"/>
+                                    <constraint firstItem="vAU-yy-weO" firstAttribute="leading" secondItem="W66-l5-cTR" secondAttribute="leading" id="l5u-JU-vLU"/>
+                                    <constraint firstItem="Gh9-KD-G1a" firstAttribute="leading" secondItem="W66-l5-cTR" secondAttribute="leading" id="omk-Sy-aye"/>
+                                    <constraint firstItem="LQW-AA-17E" firstAttribute="leading" secondItem="W66-l5-cTR" secondAttribute="leading" id="rOp-ZZ-inH"/>
+                                    <constraint firstItem="v5l-Ty-zB0" firstAttribute="leading" secondItem="W66-l5-cTR" secondAttribute="leading" id="snh-W9-pOC"/>
+                                    <constraint firstAttribute="trailing" secondItem="vAU-yy-weO" secondAttribute="trailing" id="ysH-J3-2ay"/>
+                                </constraints>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="40" y="40" width="560" height="740"/>
+                                </variation>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W66-l5-cTR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="Oj1-e2-2um"/>
+                            <constraint firstItem="W66-l5-cTR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="f4Y-xo-JHv"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="W66-l5-cTR" secondAttribute="bottom" constant="20" id="sJP-59-0Tb"/>
+                            <constraint firstAttribute="trailing" secondItem="W66-l5-cTR" secondAttribute="trailing" constant="20" id="yUP-tD-c2A"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="234" y="137"/>
         </scene>
     </scenes>
 </document>
