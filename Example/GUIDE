@@ -1,0 +1,23 @@
+
+
+-Use a pod for development:
+pod 'SmartPopup', :path => '~/code/Pods/'
+
+-Test if the pod release is working:
+$ pod lib lint
+
+-For testing the release version of the pod before updating the podspec
+$ pod 'SmartPopup', :git => 'https://github.com/RicardoKoch/SmartPopup.git'
+
+-To release a new version
+# set the new version to 0.0.1
+# set the new tag to 0.0.1
+$ pod lib lint
+
+$ git add -A && git commit -m "Release 0.0.1."
+$ git tag '0.0.1'
+$ git push --tags
+
+
+-After tag push, send the podspec to the pods repo
+$ pod trunk push SmartPopup.podspec

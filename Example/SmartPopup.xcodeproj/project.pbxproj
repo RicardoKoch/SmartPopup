@@ -17,6 +17,7 @@
 		8E12A0031C7CC21300E4C8A4 /* GiftWonDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E12A0011C7CC21300E4C8A4 /* GiftWonDialog.swift */; };
 		8E12A0041C7CC21300E4C8A4 /* GiftWonDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E12A0021C7CC21300E4C8A4 /* GiftWonDialog.xib */; };
 		8E48E6C51C7CDE6F0072E519 /* teste.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E6C41C7CDE6F0072E519 /* teste.m */; };
+		8E48E6CF1C7D17F60072E519 /* GUIDE in Resources */ = {isa = PBXBuildFile; fileRef = 8E48E6CE1C7D17F60072E519 /* GUIDE */; };
 		915C235A2AEDAEABBFAABC76 /* Pods_SmartPopup_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E8A22AF348B9452F094309 /* Pods_SmartPopup_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		8E48E6C21C7CDE6E0072E519 /* SmartPopup_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartPopup_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		8E48E6C31C7CDE6F0072E519 /* teste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teste.h; sourceTree = "<group>"; };
 		8E48E6C41C7CDE6F0072E519 /* teste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teste.m; sourceTree = "<group>"; };
+		8E48E6CE1C7D17F60072E519 /* GUIDE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GUIDE; sourceTree = "<group>"; };
 		999725717C4F2006298E16A9 /* Pods-SmartPopup_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPopup_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPopup_Tests/Pods-SmartPopup_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A2B9EB80FCA30F5750183259 /* Pods_SmartPopup_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartPopup_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E8A22AF348B9452F094309 /* Pods_SmartPopup_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartPopup_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				F646C7A4AEEB48AA2BACA971 /* SmartPopup.podspec */,
 				2C3AECD8406D0C1E9ACB0B83 /* README.md */,
 				546473E908E09734D5BAFE2F /* LICENSE */,
+				8E48E6CE1C7D17F60072E519 /* GUIDE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				8E48E6CF1C7D17F60072E519 /* GUIDE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
