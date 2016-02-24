@@ -66,20 +66,20 @@ SmartPopup.instance().showWithType(SmartPopupTypeImage, image: UIImage(named: "q
 
 You have five types of popups to play with: plain, with image, with image view, with activity indicator and a custom popup with xib.
 
-## Custom Models
+## Custom Popups
 
-Custom modals can have any interface you want. They can be completly customazied because they are build using the IB and a View class. The SmartPopup will just manage the presentation of thoses popups for you.
-To create a custom SmartPopup user interface you must create a Xib file and design anything you want. Then create a View class and implement the following protocol:
+Custom popups can have any interface you want. They can be completly customized because they are built using the IB and a View class. The SmartPopup singleton will just manage the presentation of thoses popups for you.
+To create a custom SmartPopup user interface you must first create a Xib file and design anything you want. Then create a View class and implement the following protocol:
 
 ```ruby
 SmartPopupViewProtocol
 ```
 
 This protocol must be implemented so the SmartPopup component understand your view as a custom popup.
-Those are the methods that must be implemented:
+This is a sample implementation you can follow:
 
 ```ruby
-//Method used to instantiate the view and sent as parameter to the SmartPopup singleton
+//#Method used to instantiate the view and sent as parameter to the SmartPopup singleton
 class func createFromXib() -> SmartPopupViewProtocol! {
 
     let array = NSBundle.mainBundle().loadNibNamed("XibNameHere", owner: self, options: nil)
@@ -92,25 +92,23 @@ class func createFromXib() -> SmartPopupViewProtocol! {
     return nil
 }
 
-//Called to pass arguments to customize the behavior of the class and UI
+//#Called to pass arguments to customize the behavior of the class and UI
 func setArgs(args: [AnyObject]!) {
 
     if args != nil && args.count > 0 {
         if let arg = args[0] as? String {
-            //set variables...
             self.title = arg
         }
     }
 }
 
-//Used when the popup is going to be shown.
+//#Used when the popup is going to be shown.
 func willShowWithId(identifier: String!) {
     self.popupId = identifier
 }
 
-//Used when the UI components are going to be presented in the screen. This is when you should configure views, create or customize.
+//#Used when the UI components are going to be presented in the screen. This is when you should configure views, create or customize.
 func config() {
-    //configure ui elements
 }
 ```
 

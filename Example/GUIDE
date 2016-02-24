@@ -21,6 +21,8 @@ $ git push --tags
 
 -After tag push, send the podspec to the pods repo
 $ pod trunk push SmartPopup.podspec
+or
+$ pod trunk push --verbose --allow-warnings
 
 
 -If session not registered. Register first with
