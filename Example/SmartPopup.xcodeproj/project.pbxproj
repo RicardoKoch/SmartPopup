@@ -16,7 +16,6 @@
 		855E5ECBA1BDD3ADD34F8831 /* Pods_SmartPopup_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B9EB80FCA30F5750183259 /* Pods_SmartPopup_Example.framework */; };
 		8E12A0031C7CC21300E4C8A4 /* GiftWonDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E12A0011C7CC21300E4C8A4 /* GiftWonDialog.swift */; };
 		8E12A0041C7CC21300E4C8A4 /* GiftWonDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E12A0021C7CC21300E4C8A4 /* GiftWonDialog.xib */; };
-		8E48E6C51C7CDE6F0072E519 /* teste.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E6C41C7CDE6F0072E519 /* teste.m */; };
 		8E48E6CF1C7D17F60072E519 /* GUIDE in Resources */ = {isa = PBXBuildFile; fileRef = 8E48E6CE1C7D17F60072E519 /* GUIDE */; };
 		915C235A2AEDAEABBFAABC76 /* Pods_SmartPopup_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E8A22AF348B9452F094309 /* Pods_SmartPopup_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -50,8 +49,6 @@
 		8E12A0011C7CC21300E4C8A4 /* GiftWonDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftWonDialog.swift; sourceTree = "<group>"; };
 		8E12A0021C7CC21300E4C8A4 /* GiftWonDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftWonDialog.xib; sourceTree = "<group>"; };
 		8E48E6C21C7CDE6E0072E519 /* SmartPopup_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartPopup_Example-Bridging-Header.h"; sourceTree = "<group>"; };
-		8E48E6C31C7CDE6F0072E519 /* teste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teste.h; sourceTree = "<group>"; };
-		8E48E6C41C7CDE6F0072E519 /* teste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teste.m; sourceTree = "<group>"; };
 		8E48E6CE1C7D17F60072E519 /* GUIDE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GUIDE; sourceTree = "<group>"; };
 		999725717C4F2006298E16A9 /* Pods-SmartPopup_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPopup_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPopup_Tests/Pods-SmartPopup_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A2B9EB80FCA30F5750183259 /* Pods_SmartPopup_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartPopup_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,8 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				607FACD41AFB9204008FA782 /* Info.plist */,
-				8E48E6C31C7CDE6F0072E519 /* teste.h */,
-				8E48E6C41C7CDE6F0072E519 /* teste.m */,
 				8E48E6C21C7CDE6E0072E519 /* SmartPopup_Example-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
@@ -389,7 +384,6 @@
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				8E12A0031C7CC21300E4C8A4 /* GiftWonDialog.swift in Sources */,
-				8E48E6C51C7CDE6F0072E519 /* teste.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

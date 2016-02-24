@@ -49,6 +49,8 @@ typedef void (^SmartPopupButtonBlock)(SmartPopupInstance*);
 
 - (SmartPopupInstance *)showfromXib:(Class)xibClass withArgs:(NSArray *)args;
 
+- (SmartPopupInstance *)showWithTitle:(NSString *)title message:(NSString *)message buttons:(NSArray *)buttons;
+
 - (void)dismiss:(SmartPopupInstance *)popup;
 
 - (UIView *)backgroundView;

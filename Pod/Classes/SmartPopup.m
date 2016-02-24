@@ -160,6 +160,22 @@ static SmartPopup *sharedSingleton = nil;
     return [self showWithDefinition:popDef];
 }
 
+- (SmartPopupInstance *)showWithTitle:(NSString *)title message:(NSString *)message buttons:(NSArray *)buttons {
+
+    //store definition of the popup
+    SmartPopupDefinition *popDef = [[SmartPopupDefinition alloc] init];
+    popDef.title = title;
+    popDef.message = message;
+    popDef.type = SmartPopupTypeNoImage;
+    
+    popDef.buttonsDefined = buttons;
+    popDef.objectId = [self generateInstanceCode];
+    
+    [self.customView willShowWithId:popDef.objectId];
+    
+    return [self showWithDefinition:popDef];
+}
+
 - (void)dismiss:(SmartPopupInstance *)popup {
     
     if ([self.activePopups count] > 0) {

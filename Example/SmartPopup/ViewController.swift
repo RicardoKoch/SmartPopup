@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBAction func simpleDialogAction(sender: AnyObject) {
         
         
-        SmartPopup.instance().showWithType(SmartPopupTypeImage, image: nil, title: "Welcome", message: "Welcome to Smart Popups!", buttons:
+        SmartPopup.instance().showWithTitle("Welcome", message: "Welcome to Smart Popups!", buttons:
             [
                 SmartPopupButton(text: "OK", andBlock: {
                     (instance:String!) -> Void in
