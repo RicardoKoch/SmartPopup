@@ -21,3 +21,7 @@ $ git push --tags
 
 -After tag push, send the podspec to the pods repo
 $ pod trunk push SmartPopup.podspec
+
+
+-If session not registered. Register first with
+$ pod trunk register orta@cocoapods.org 'Orta Therox' --description='macbook air'

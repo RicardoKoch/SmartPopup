@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "SmartPopup"
   s.version          = "1.0.0"
-  s.summary          = "A short description of SmartPopup."
+  s.summary          = "SmartPopup allows easy creation and management of pretty UI dialogs for iOS"
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
-Cocoapods component for easy creating and management of UI dialogs for iOS
+Cocoapods component for easy creation and management of animated and engaging UI dialogs for iOS. Easily create animated and modern dialogs with very little code. Customize completly the dialog UI with Xibs and reuse it throughout your app.
                        DESC
 
   s.homepage         = "https://github.com/RicardoKoch/SmartPopup"
