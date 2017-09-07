@@ -24,10 +24,10 @@ class ViewController: UIViewController {
      SAMPLE CODE
      */
     
-    @IBAction func simpleDialogAction(sender: AnyObject) {
+    @IBAction func simpleDialogAction(_ sender: AnyObject) {
         
         
-        SmartPopup.instance().showWithTitle("Welcome", message: "Welcome to Smart Popups!", buttons:
+        SmartPopup.instance().show(withTitle: "Welcome", message: "Welcome to Smart Popups!", buttons:
             [
                 SmartPopupButton(text: "OK", andBlock: {
                     (instance:String!) -> Void in
@@ -37,10 +37,10 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func chainedDialogAction(sender: AnyObject) {
+    @IBAction func chainedDialogAction(_ sender: AnyObject) {
         
         
-        SmartPopup.instance().showWithType(SmartPopupTypeImage, image: UIImage(named: "questionIcon"), title: "Question", message: "Do you want to save your avatar?\nThe view will auto resize based on the size of the text.\nLarge blocks are welcome, but the user will not read it :)", buttons:
+        SmartPopup.instance().show(with: SmartPopupTypeImage, image: UIImage(named: "questionIcon"), title: "Question", message: "Do you want to save your avatar?\nThe view will auto resize based on the size of the text.\nLarge blocks are welcome, but the user will not read it :)", buttons:
             [
                 SmartPopupButton(text: "Yes", andBlock: {
                     (instance:String!) -> Void in
@@ -57,9 +57,9 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func loadingDialogAction(sender: AnyObject) {
+    @IBAction func loadingDialogAction(_ sender: AnyObject) {
         
-        SmartPopup.instance().showWithType(SmartPopupTypeLoading, image: nil, title: "Please Waiting", message: "Doing nothing in the background...", buttons:
+        SmartPopup.instance().show(with: SmartPopupTypeLoading, image: nil, title: "Please Waiting", message: "Doing nothing in the background...", buttons:
             [
                 SmartPopupButton(text: "Cancel", andBlock: {
                     (instance:String!) -> Void in
@@ -71,14 +71,14 @@ class ViewController: UIViewController {
         )
     }
     
-    @IBAction func customViewAction(sender: AnyObject) {
+    @IBAction func customViewAction(_ sender: AnyObject) {
         
         SmartPopup.instance().showfromXib(GiftWonDialog.self, withArgs: nil)
     }
 
-    @IBAction func buttonsDialogAction(sender: AnyObject) {
+    @IBAction func buttonsDialogAction(_ sender: AnyObject) {
         
-        SmartPopup.instance().showWithType(SmartPopupTypeImage, image: UIImage(named: "toys"), title: "You Won!", message: "Select your action", buttons:
+        SmartPopup.instance().show(with: SmartPopupTypeImage, image: UIImage(named: "toys"), title: "You Won!", message: "Select your action", buttons:
             [
                 SmartPopupButton(text: "Use It", andBlock: {
                     (instance:String!) -> Void in
@@ -93,9 +93,9 @@ class ViewController: UIViewController {
         )
     }
     
-    @IBAction func dialogWithImageAction(sender: AnyObject) {
+    @IBAction func dialogWithImageAction(_ sender: AnyObject) {
         
-        SmartPopup.instance().showWithType(SmartPopupTypeImage, image: UIImage(named: "toys"), title: "Welcome", message: "Welcome to Smart Popups!", buttons:
+        SmartPopup.instance().show(with: SmartPopupTypeImage, image: UIImage(named: "toys"), title: "Welcome", message: "Welcome to Smart Popups!", buttons:
             [
                 SmartPopupButton(text: "OK", andBlock: {
                     (instance:String!) -> Void in
@@ -104,11 +104,11 @@ class ViewController: UIViewController {
         )
     }
     
-    @IBAction func dialogImageViewAction(sender: AnyObject) {
+    @IBAction func dialogImageViewAction(_ sender: AnyObject) {
         
         let iv = UIImageView(image: UIImage(named: "toy"))
         
-        SmartPopup.instance().showWithImageView(iv, title: "Welcome", message: "You can load your custom image views with lazy loading here.", buttons:
+        SmartPopup.instance().show(withImageView: iv, title: "Welcome", message: "You can load your custom image views with lazy loading here.", buttons:
             [
                 SmartPopupButton(text: "Close", andBlock: {
                     (instance:String!) -> Void in
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func customDialog2Action(sender: AnyObject) {
+    @IBAction func customDialog2Action(_ sender: AnyObject) {
         
         //You can pass variables to customize the behavior of your custom dialog
         //With custom dialogs you can create your own UX and take advantage of the SmartPopup API.

@@ -9,4 +9,6 @@
 
 @interface UIRotatingView : UIView
 
+@property int direction;
+
 @end

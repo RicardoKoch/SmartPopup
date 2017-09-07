@@ -159,12 +159,17 @@
 }
 
 - (void)applyAnimatedBlur:(BlurArgs *)args inView:(UIImageView *)view {
-    
+	
+	for(UIView *child in view.subviews) {
+		[child removeFromSuperview];
+	}
+	
     args.tintColor = [args.tintColor colorWithAlphaComponent:args.colorAlpha];
     
     UIImage *effectImage = [self applyBlurWithRadius:args.blurFinal tintColor:args.tintColor saturationDeltaFactor:1.0f + args.saturationIncrement maskImage:nil];
     UIImageView *uiv = [[UIImageView alloc]initWithImage:effectImage];
     uiv.frame = view.frame;
+	uiv.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     uiv.contentMode = UIViewContentModeScaleAspectFill;
     uiv.alpha = 0;
     [view addSubview:uiv];

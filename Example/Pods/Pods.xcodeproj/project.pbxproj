@@ -375,8 +375,14 @@
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0720;
 				TargetAttributes = {
+					349B0E55B340CE4B013C26E311F008B1 = {
+						LastSwiftMigration = 0830;
+					};
 					460447E5FFC5FA3E39B79DACAB8CF8E7 = {
 						DevelopmentTeam = L76S8C9RJJ;
+					};
+					E0DF915AD5E1D536BD51E0F63E4F991E = {
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -573,6 +579,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -638,6 +645,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -670,6 +678,7 @@
 				PRODUCT_NAME = Pods_SmartPopup_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -770,6 +779,7 @@
 				PRODUCT_NAME = Pods_SmartPopup_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

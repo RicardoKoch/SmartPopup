@@ -11,6 +11,7 @@
 
 #define kSmartPopupBackgroundTag 90001
 #define kSmartPopupPopupTag 90002
+#define kSmartPopupBackgroundBlurTag 90003
 #define kSmartPopupBorderMargin 10
 #define kSmartPopupBottomMessageBorderMargin 20
 #define kSmartPopupButtonHeight 46
@@ -90,6 +91,12 @@ static SmartPopup *sharedSingleton = nil;
     self = [super init];
     if (self) {
         self.activePopups = [NSMutableArray array];
+		
+		[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(orientationChanged:)
+													 name:UIDeviceOrientationDidChangeNotification
+												   object:nil];
     }
     return self;
 }
@@ -180,8 +187,8 @@ static SmartPopup *sharedSingleton = nil;
     
     if ([self.activePopups count] > 0) {
 
-        UIWindow *win = [UIApplication sharedApplication].windows[0];
-        UIView *container = [win viewWithTag:kSmartPopupBackgroundTag];
+
+        UIView *container = [self backgroundView];
         
         SmartPopupDefinition *popToDismiss = nil;
         BOOL isTop = NO;
@@ -330,47 +337,54 @@ static SmartPopup *sharedSingleton = nil;
         
         //create buttons at bottom of popup
         [self createButtonsForPopup:popup inView:popView];
-        
-        //center the popup
-        popView.center = popContainer.center;
+
     }
     else {
         //from xib
-        
-        
     }
-    
+	
+	//center the popup
+	popView.center = popContainer.center;
+	
     //show animation
     [self animateLaunch:popup inContainer:popContainer];
     
     return popup.objectId;
 }
 
+- (UIViewController *)rootViewController {
+	return [UIApplication sharedApplication].windows[0].rootViewController;
+}
+
 - (UIView*)createBaseBackground {
 
     UIView *bg = nil;
-    UIWindow *win = [UIApplication sharedApplication].windows[0];
-    bg = [win viewWithTag:kSmartPopupBackgroundTag];
+    bg = [self backgroundView];
     if (bg == nil) {
-        CGRect screen = [UIScreen mainScreen].bounds;
+		UIView *rootView = [self rootViewController].view;
+        CGRect screen = rootView.bounds;
         bg = [[UIView alloc] initWithFrame:screen];
-        bg.backgroundColor = [UIColor redColor];
+        bg.backgroundColor = [UIColor clearColor];
+		bg.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         bg.tag = kSmartPopupBackgroundTag;
-        
-        UIImageView *iv = [[UIImageView alloc] initWithFrame:screen];
-        [bg addSubview:iv];
-        
-        BlurArgs *args = [[BlurArgs alloc] init];
-        args.tintColor = [UIColor colorWithRed:118/255.0f green:118/255.0f blue:118/255.0f alpha:0];
-        args.colorAlpha = 0.2f;
-        args.blurFinal = 8;
-        args.saturationIncrement = 0.6f;
-        
-        UIImage *bgImg = [UIImage getImageFromWindow];
-        iv.image = bgImg;
-        [bgImg applyAnimatedBlur:args inView:iv];
-        
-        [win addSubview:bg];
+		
+		UIVisualEffectView *effect = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular]];
+		effect.tag = kSmartPopupBackgroundBlurTag;
+		effect.frame = screen;
+		effect.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+		effect.alpha = 0;
+		[bg addSubview:effect];
+		[UIView animateWithDuration:0.7 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+			effect.alpha = 0.9;
+		} completion:nil];
+		
+//        UIImageView *iv = [[UIImageView alloc] initWithFrame:screen];
+//		iv.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//		iv.tag = kSmartPopupBackgroundBlurTag;
+//		[bg addSubview:iv];
+
+		[[self rootViewController].view addSubview:bg];
+//		[self applyBackgroundBlur];
     }
 
     return bg;
@@ -388,9 +402,7 @@ static SmartPopup *sharedSingleton = nil;
             [self animateDismiss:pop];
         }
     }
-    
-    UIView *popRotatingFloor = [[UIRotatingView alloc] initWithFrame:container.frame];
-    
+	
     if (popDef.type != SmartPopupTypeXib) {
         CGRect popupSize;
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -401,22 +413,19 @@ static SmartPopup *sharedSingleton = nil;
         }
         
         pop = [[UIView alloc] initWithFrame:popupSize];
-        pop.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
         pop.clipsToBounds = NO;
         pop.backgroundColor = [UIColor whiteColor];
-        
-        [container addSubview:popRotatingFloor];
-        [popRotatingFloor addSubview:pop];
+		
+        [container addSubview:pop];
     }
     else {
         
         [self.customView config];
         pop = (UIView *)self.customView;
-        
-        [container addSubview:popRotatingFloor];
-        [popRotatingFloor addSubview:pop];
+		
+        [container addSubview:pop];
     }
-    
+	
     pop.layer.cornerRadius = 6;
     pop.layer.borderWidth = 2;
     pop.layer.borderColor = [UIColor colorWithRed:245.0f/255 green:245.0f/255 blue:245.0f/255 alpha:1].CGColor;
@@ -564,9 +573,31 @@ static SmartPopup *sharedSingleton = nil;
 }
 
 - (UIView *)backgroundView {
-    UIWindow *win = [UIApplication sharedApplication].windows[0];
-    return [win viewWithTag:kSmartPopupBackgroundTag];
+	UIView *topView = [self rootViewController].view;
+    return [topView viewWithTag:kSmartPopupBackgroundTag];
 }
 
+- (void)applyBackgroundBlur {
+	
+	UIView *topView = [self rootViewController].view;
+	UIImageView *view = (UIImageView *)[topView viewWithTag:kSmartPopupBackgroundBlurTag];
+	
+	BlurArgs *args = [[BlurArgs alloc] init];
+	args.tintColor = [UIColor colorWithRed:118/255.0f green:118/255.0f blue:118/255.0f alpha:0];
+	args.colorAlpha = 0.2f;
+	args.blurFinal = 8;
+	args.saturationIncrement = 0.6f;
+	
+	UIImage *bgImg = [UIImage getImageFromWindow];
+	view.image = bgImg;
+	[bgImg applyAnimatedBlur:args inView:view];
+}
+
+- (void)orientationChanged:(NSNotification *)notification {
+	
+	UIView *container = [self backgroundView];
+	UIView *popView = [container viewWithTag:kSmartPopupPopupTag];
+	popView.center = container.center;
+}
 
 @end

@@ -7,6 +7,30 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class GiftWonDialog: UIView, SmartPopupViewProtocol {
 
@@ -37,7 +61,7 @@ class GiftWonDialog: UIView, SmartPopupViewProtocol {
     
     class func createFromXib() -> SmartPopupViewProtocol! {
         
-        let array = NSBundle.mainBundle().loadNibNamed("GiftWonDialog", owner: self, options: nil)
+        let array = Bundle.main.loadNibNamed("GiftWonDialog", owner: self, options: nil)
         
         if array?.count > 0 {
             if let dialog = array![0] as? SmartPopupViewProtocol {
@@ -47,7 +71,7 @@ class GiftWonDialog: UIView, SmartPopupViewProtocol {
         return nil
     }
     
-    func setArgs(args: [AnyObject]!) {
+    func setArgs(_ args: [Any]!) {
         
         if args != nil && args.count > 0 {
             if let arg = args[0] as? String {
@@ -68,7 +92,7 @@ class GiftWonDialog: UIView, SmartPopupViewProtocol {
         }
     }
     
-    func willShowWithId(identifier: String!) {
+    func willShow(withId identifier: String!) {
         
         self.popupId = identifier
     }
@@ -93,22 +117,22 @@ class GiftWonDialog: UIView, SmartPopupViewProtocol {
         }
         
         var buttonImage = UIImage(named:"BlueButton");
-        buttonImage = buttonImage?.stretchableImageWithLeftCapWidth(10, topCapHeight: 0)
-        self.closeButton.setBackgroundImage(buttonImage, forState: .Normal)
+        buttonImage = buttonImage?.stretchableImage(withLeftCapWidth: 10, topCapHeight: 0)
+        self.closeButton.setBackgroundImage(buttonImage, for: UIControlState())
         
         var buttonImage2 = UIImage(named:"BlueButtonP");
-        buttonImage2 = buttonImage2?.stretchableImageWithLeftCapWidth(10, topCapHeight: 0)
-        self.closeButton.setBackgroundImage(buttonImage2, forState: UIControlState.Highlighted)
-        self.closeButton.backgroundColor = UIColor.clearColor()
+        buttonImage2 = buttonImage2?.stretchableImage(withLeftCapWidth: 10, topCapHeight: 0)
+        self.closeButton.setBackgroundImage(buttonImage2, for: UIControlState.highlighted)
+        self.closeButton.backgroundColor = UIColor.clear
         
         buttonImage = UIImage(named:"GrayButton");
-        buttonImage = buttonImage?.stretchableImageWithLeftCapWidth(10, topCapHeight: 0)
-        self.equipButton.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+        buttonImage = buttonImage?.stretchableImage(withLeftCapWidth: 10, topCapHeight: 0)
+        self.equipButton.setBackgroundImage(buttonImage, for: UIControlState())
         
         buttonImage2 = UIImage(named:"GrayButtonP");
-        buttonImage2 = buttonImage2?.stretchableImageWithLeftCapWidth(10, topCapHeight: 0)
-        self.equipButton.setBackgroundImage(buttonImage2, forState: UIControlState.Highlighted)
-        self.equipButton.backgroundColor = UIColor.clearColor()
+        buttonImage2 = buttonImage2?.stretchableImage(withLeftCapWidth: 10, topCapHeight: 0)
+        self.equipButton.setBackgroundImage(buttonImage2, for: UIControlState.highlighted)
+        self.equipButton.backgroundColor = UIColor.clear
         
     }
     
@@ -116,12 +140,12 @@ class GiftWonDialog: UIView, SmartPopupViewProtocol {
      END OF MANDATORY PROTOCOL METHODS
      */
     
-    @IBAction func closeClicked(sender: AnyObject) {
+    @IBAction func closeClicked(_ sender: AnyObject) {
         
         SmartPopup.instance().dismiss(self.popupId)
     }
     
-    @IBAction func goToClicked(sender: AnyObject) {
+    @IBAction func goToClicked(_ sender: AnyObject) {
         
         SmartPopup.instance().dismiss(self.popupId)
     }

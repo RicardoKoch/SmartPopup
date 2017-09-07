@@ -31,6 +31,10 @@
 
 - (void)orientationChanged:(NSNotification *)notification
 {
+	if (self.direction == 0) {
+		return;
+	}
+	
     UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;
     
     switch (deviceOrientation) {
@@ -46,14 +50,22 @@
 
             [UIView beginAnimations:nil context:nil];
             [UIView setAnimationDuration:firstRotation ? 0 : 0.3f];
-            self.transform = CGAffineTransformMakeRotation(-M_PI);
+			if (self.direction == 1) {
+				self.transform = CGAffineTransformMakeRotation(-M_PI);
+			} else {
+				self.transform = CGAffineTransformMakeRotation(M_PI);
+			}
 
             [UIView commitAnimations];
             break;
         case UIDeviceOrientationLandscapeLeft:
             [UIView beginAnimations:nil context:nil];
             [UIView setAnimationDuration:firstRotation ? 0 : 0.3f];
-            self.transform = CGAffineTransformMakeRotation(M_PI_2);
+			if (self.direction == 1) {
+				self.transform = CGAffineTransformMakeRotation(M_PI_2);
+			} else {
+				self.transform = CGAffineTransformMakeRotation(-M_PI_2);
+			}
 
             [UIView commitAnimations];
             break;
@@ -62,7 +74,11 @@
             [UIView beginAnimations:nil context:nil];
             [UIView setAnimationDuration:firstRotation ? 0 : 0.3f];
 
-            self.transform = CGAffineTransformMakeRotation(-M_PI_2);
+			if (self.direction == 1) {
+				self.transform = CGAffineTransformMakeRotation(-M_PI_2);
+			} else {
+				self.transform = CGAffineTransformMakeRotation(M_PI_2);
+			}
 
             [UIView commitAnimations];
             break;
