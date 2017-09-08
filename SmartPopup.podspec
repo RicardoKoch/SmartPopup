@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SmartPopup"
-  s.version          = "1.5"
+  s.version          = "1.5.1"
   s.summary          = "SmartPopup allows easy creation and management of pretty UI dialogs for iOS"
 
 # This description is used to generate tags and improve search results.

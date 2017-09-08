@@ -368,7 +368,7 @@ static SmartPopup *sharedSingleton = nil;
 		bg.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         bg.tag = kSmartPopupBackgroundTag;
 		
-		UIVisualEffectView *effect = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular]];
+		UIVisualEffectView *effect = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
 		effect.tag = kSmartPopupBackgroundBlurTag;
 		effect.frame = screen;
 		effect.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
